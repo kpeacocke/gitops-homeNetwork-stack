@@ -56,6 +56,19 @@ services:
     networks:
       - genieacs_network
 
+  syslog-ng:
+    image: balabit/syslog-ng:latest
+    container_name: syslog-ng
+    ports:
+      - "514:514/udp"
+      - "514:514/tcp"
+    volumes:
+      - ./syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
+      - ./logs:/var/log/syslog-ng
+    restart: unless-stopped
+    networks:
+      - genieacs_network
+
 volumes:
   data_db:
   data_configdb:
