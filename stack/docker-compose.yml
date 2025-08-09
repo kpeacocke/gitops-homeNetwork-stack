@@ -63,8 +63,8 @@ services:
       - "514:514/udp"
       - "514:514/tcp"
     volumes:
-      - ./syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
-      - ./logs:/var/log/syslog-ng
+      # - ./syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
+      - logs:/var/log/syslog-ng
     restart: unless-stopped
     networks:
       - genieacs_network
@@ -73,6 +73,8 @@ volumes:
   data_db:
   data_configdb:
   opt_volume:
+  logs:
+
 
 networks:
   genieacs_network:
