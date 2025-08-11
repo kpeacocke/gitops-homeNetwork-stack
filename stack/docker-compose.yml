@@ -60,8 +60,8 @@ services:
     image: balabit/syslog-ng:latest
     container_name: syslog-ng
     ports:
-      - "514:514/udp"
-      - "514:514/tcp"
+      - "515:514/udp"
+      - "515:514/tcp"
     volumes:
       # - ./syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
       - logs:/var/log/syslog-ng
