@@ -31,3 +31,8 @@ jobs:
         with:
           scan-type: config
           scan-ref: stack/
+
+      - name: Trigger Portainer Stack Redeploy
+        if: success()
+        run: |
+          curl -X POST ${{ secrets.PORTAINER_WEBHOOK_URL }}

@@ -73,8 +73,6 @@
     data_db:
     data_configdb:
     opt_volume:
-    logs:
-
 
   networks:
     genieacs_network:
