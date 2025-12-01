@@ -59,10 +59,12 @@ services:
       - 'genieacs'
     image: drumsergio/genieacs-mcp:latest
     container_name: "genieacs-mcp"
+    restart: unless-stopped
     environment:
       ACS_URL: http://genieacs:7557
       ACS_USER: admin
       ACS_PASS: admin
+      TRANSPORT: http
     ports:
       - "8088:8080"
     networks:
