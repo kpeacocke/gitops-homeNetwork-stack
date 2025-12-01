@@ -25,7 +25,7 @@ services:
     networks:
       - genieacs_network
     healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 3000 || exit 1"]
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/3000' || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
